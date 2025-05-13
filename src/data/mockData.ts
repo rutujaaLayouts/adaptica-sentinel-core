@@ -28,7 +28,7 @@ export const securityEvents: SecurityEvent[] = [
     description: 'Multiple failed login attempts from unusual location',
     riskScore: 85,
     riskLevel: 'high',
-    affectedAssets: ['User:john.doe', 'Office365'],
+    affectedAssets: ['User:ajay.patel', 'Office365'],
     status: 'active'
   },
   {
@@ -39,7 +39,7 @@ export const securityEvents: SecurityEvent[] = [
     description: 'Unusual access to sensitive financial documents',
     riskScore: 75,
     riskLevel: 'high',
-    affectedAssets: ['User:jane.smith', 'Finance Server'],
+    affectedAssets: ['User:priya.sharma', 'Finance Server'],
     status: 'investigating'
   },
   {
@@ -94,7 +94,7 @@ export const securityEvents: SecurityEvent[] = [
     description: 'Unusual working hours and access patterns',
     riskScore: 60,
     riskLevel: 'medium',
-    affectedAssets: ['User:robert.johnson', 'Multiple Systems'],
+    affectedAssets: ['User:rahul.joshi', 'Multiple Systems'],
     status: 'investigating'
   },
   {
@@ -356,7 +356,7 @@ export const riskScoreHistory: RiskScoreHistory[] = [
 export const users: User[] = [
   {
     id: 'usr-001',
-    name: 'John Doe',
+    name: 'Ajay Patel',
     role: 'System Administrator',
     department: 'IT',
     riskScore: 85,
@@ -366,7 +366,7 @@ export const users: User[] = [
   },
   {
     id: 'usr-002',
-    name: 'Jane Smith',
+    name: 'Priya Sharma',
     role: 'Financial Analyst',
     department: 'Finance',
     riskScore: 75,
@@ -376,7 +376,7 @@ export const users: User[] = [
   },
   {
     id: 'usr-003',
-    name: 'Robert Johnson',
+    name: 'Rahul Joshi',
     role: 'Software Developer',
     department: 'Engineering',
     riskScore: 45,
@@ -386,7 +386,7 @@ export const users: User[] = [
   },
   {
     id: 'usr-004',
-    name: 'Maria Garcia',
+    name: 'Meera Gupta',
     role: 'HR Manager',
     department: 'Human Resources',
     riskScore: 30,
@@ -396,7 +396,7 @@ export const users: User[] = [
   },
   {
     id: 'usr-005',
-    name: 'David Wong',
+    name: 'Vikram Malhotra',
     role: 'CEO',
     department: 'Executive',
     riskScore: 60,
@@ -478,3 +478,4 @@ export const systemHealth: SystemHealth[] = [
   { name: 'Network Bandwidth', value: 55, status: 'healthy' },
   { name: 'API Response Time', value: 250, status: 'healthy' }, // milliseconds
 ];
+

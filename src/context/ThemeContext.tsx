@@ -15,19 +15,17 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('system');
 
-  // Initialize theme from local storage or default to light
+  // Initialize theme from local storage or default to system
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme') as Theme;
     if (storedTheme) {
       setTheme(storedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('system');
     }
   }, []);
 
-  // Apply theme changes to DOM
+  // Apply theme changes to DOM and handle system preference changes
   useEffect(() => {
     const root = window.document.documentElement;
     
@@ -36,6 +34,16 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     if (theme === 'system') {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       root.classList.add(systemTheme);
+      
+      // Listen for changes in system preference
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handleChange = (e: MediaQueryListEvent) => {
+        root.classList.remove('light', 'dark');
+        root.classList.add(e.matches ? 'dark' : 'light');
+      };
+      
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
     } else {
       root.classList.add(theme);
     }

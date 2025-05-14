@@ -145,10 +145,4 @@ The Adaptive Security Policy Engine (ASPE) is a cutting-edge security automation
 - **Custom Compliance Frameworks**: Support for industry-specific regulations
 - **MSSP Multi-tenant Support**: White-labeling for managed security providers
 
-## License
 
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Built with ❤️ by Your Security Team
